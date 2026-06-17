@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hasil Identifikasi</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>HASIL IDENTIFIKASI</h1>
+
+    <div class="panel">
+
+        <div class="card">
+
+            <h2>GAMBAR INPUT</h2>
+
+            <div class="preview">
+
+                <img src="{{ url_for('static', filename=input_image) }}?v={{ range(1,999999)|random }}">
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>HASIL DETEKSI</h2>
+
+            <div class="preview">
+
+                <img src="{{ url_for('static', filename=image) }}?v={{ range(1,999999)|random }}">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="{{ url_for('static', filename=image) }}" download>
+
+        <button>
+
+            DOWNLOAD HASIL
+
+        </button>
+
+    </a>
+
+    <br><br>
+
+    <a href="/">
+
+        <button>
+
+            KEMBALI
+
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
